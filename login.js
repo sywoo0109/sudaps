@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   idInput.addEventListener("blur", () => {
     const inputValue = idInput.value;
-    const errorMessage = document.getElementById("id_error_message");
+    const errorMessage = document.getElementById("idErrorMessage");
 
     fetch("process_idcheck.php", {
       method: "POST",
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Failed to connect to the database");
+          throw new Error("데이터베이스 연결 오류");
         }
         return response.json();
       })
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
   pwInput.addEventListener("blur", () => {
     const idInputValue = idInput.value;
     const pwInputValue = pwInput.value;
-    const errorMessage = document.getElementById("pw_error_message");
+    const errorMessage = document.getElementById("pwErrorMessage");
 
     fetch("process_pwcheck.php", {
       method: "POST",
@@ -48,11 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error("Failed to connect to the database");
+          throw new Error("데이터베이스 연결 오류");
         }
         return response.json();
       })
       .then((data) => {
+        console.log(data);
         if (data.success === true) {
           errorMessage.innerHTML = "&nbsp;";
         } else {
