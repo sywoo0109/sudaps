@@ -13,7 +13,14 @@
             <h1>삼육대학교 기부 플랫폼 관리자 사이트</h1>
             <div class="inputContainer">
                 <p>
-                    <input id="id" type="text" name="id" placeholder="id"></input>
+                    <?php
+                    if(isset($_COOKIE['userData'])) {
+                        $userDataValue = $_COOKIE['userData'];
+                        echo '<input id="id" type="text" name="id" value="'.$_COOKIE["userData"].'"}></input>';
+                    } else {
+                        echo '<input id="id" type="text" name="id" placeholder="id"></input>';
+                    }
+                    ?>
                     <div id="idErrorMessage" class="errorMessage">
                         &nbsp;
                     </div>
@@ -31,7 +38,7 @@
                     </div>
                 </p>
                 <p>
-                    <input type="checkbox">
+                    <input type="checkbox" id="idStoreCheckbox">
                         id 저장</input>
                 </p>
             </div>

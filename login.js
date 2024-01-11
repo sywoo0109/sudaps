@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const pwErrorMessage = document.getElementById("pwErrorMessage");
   const loginButtonInput = document.getElementById("loginButton");
   const duErrorMessage = document.getElementById("duErrorMessage");
+  const idStoreCheckbox = document.getElementById("idStoreCheckbox");
 
   idInput.addEventListener("blur", () => {
     const inputValue = idInput.value;
@@ -67,6 +68,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   loginButtonInput.addEventListener("click", () => {
     const inputValue = idInput.value;
+
+    if (idStoreCheckbox.checked) {
+      const expiryTime = new Date();
+      expiryTime.setTime(expiryTime.getTime() + 365 * 24 * 60 * 60 * 1000);
+      document.cookie =
+        "userData=" +
+        encodeURIComponent(inputValue) +
+        "; expires=" +
+        expiryTime.toUTCString() +
+        "; path=/";
+    }
 
     fetch("process_login.php", {
       method: "POST",
