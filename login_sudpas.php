@@ -19,7 +19,7 @@
                     </div>
                 </p>
                 <p>
-                    <input id="pw" type="text" name="pw" placeholder="pw"></input>
+                    <input id="pw" type="password" name="pw" placeholder="pw"></input>
                     <div id="pwErrorMessage" class="errorMessage">
                         &nbsp;
                     </div>
