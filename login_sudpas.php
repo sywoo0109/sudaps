@@ -25,7 +25,7 @@
                     </div>
                 </p>
                 <p>
-                    <input type="submit" value="로그인" class="login_button"></input>
+                    <input type="submit" value="로그인" id="loginButton" class="loginButton"></input>
                     <div id="duErrorMessage" class="errorMessage">
                         &nbsp;
                     </div>

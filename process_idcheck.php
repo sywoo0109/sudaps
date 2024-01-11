@@ -20,9 +20,9 @@ if ($result === FALSE) {
     $response = array("success" => false, "message" => "Error: " . $sql . "<br>" . $conn->error);
 } else {
     if ($result->num_rows > 0) {
-        $response = array("success" => true, "message" => "Data exists in the database");
+        $response = array("success" => true, "message" => "ID exists in the database");
     } else {
-        $response = array("success" => false, "message" => "Data does not exist in the database");
+        $response = array("success" => false, "message" => "ID does not exist in the database");
     }
 }
 

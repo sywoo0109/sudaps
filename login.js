@@ -1,9 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const idInput = document.getElementById("id");
+  const idErrorMessage = document.getElementById("idErrorMessage");
+  const pwInput = document.getElementById("pw");
+  const pwErrorMessage = document.getElementById("pwErrorMessage");
+  const loginButtonInput = document.getElementById("loginButton");
+  const duErrorMessage = document.getElementById("duErrorMessage");
 
   idInput.addEventListener("blur", () => {
     const inputValue = idInput.value;
-    const errorMessage = document.getElementById("idErrorMessage");
 
     fetch("process_idcheck.php", {
       method: "POST",
@@ -20,9 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .then((data) => {
         if (data.success === true) {
-          errorMessage.innerHTML = "&nbsp;";
+          idErrorMessage.innerHTML = "&nbsp;";
         } else {
-          errorMessage.innerHTML = "id를 확인해주세요";
+          idErrorMessage.innerHTML = "id를 확인해주세요";
         }
       })
       .catch((error) => {
@@ -30,12 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 
-  const pwInput = document.getElementById("pw");
-
   pwInput.addEventListener("blur", () => {
     const idInputValue = idInput.value;
     const pwInputValue = pwInput.value;
-    const errorMessage = document.getElementById("pwErrorMessage");
 
     fetch("process_pwcheck.php", {
       method: "POST",
@@ -53,11 +54,39 @@ document.addEventListener("DOMContentLoaded", () => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         if (data.success === true) {
-          errorMessage.innerHTML = "&nbsp;";
+          pwErrorMessage.innerHTML = "&nbsp;";
         } else {
-          errorMessage.innerHTML = "pw를 확인해주세요";
+          pwErrorMessage.innerHTML = "pw를 확인해주세요";
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  });
+
+  loginButtonInput.addEventListener("click", () => {
+    const inputValue = idInput.value;
+
+    fetch("process_login.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: `inputValue=${encodeURIComponent(inputValue)}`,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("데이터베이스 연결 오류");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (data.success === true) {
+          window.location.href = "sudpas.php";
+        } else {
+          duErrorMessage.innerHTML =
+            "비활성화 처리된 id입니다. 관리자에게 문의해주세요.";
         }
       })
       .catch((error) => {

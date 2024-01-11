@@ -6,8 +6,8 @@ $database = getenv('DB_DATABASE');
 
 $conn = new mysqli($host, $user, $password, $database);
 
-$idInputValue = $_POST['idInputValue'];
-$pwInputValue = $_POST['pwInputValue'];
+$idInputValue = mysqli_real_escape_string($conn, $_POST['idInputValue']);
+$pwInputValue = mysqli_real_escape_string($conn, $_POST['pwInputValue']);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -22,9 +22,9 @@ if ($result === FALSE) {
 } else {
     $row = mysqli_fetch_array($result);
     if (password_verify($pwInputValue.$row['salt'], $row['pw'])) {
-        $response = array("success" => true, "message" => "The password matches");
+        $response = array("success" => true, "message" => "Password matches");
     } else {
-        $response = array("success" => false, "message" => "The password does not match");
+        $response = array("success" => false, "message" => "Password does not match");
     }
 }
 
