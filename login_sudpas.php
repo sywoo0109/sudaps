@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>삼육대학교 기부 플랫폼 관리자 사이트</title>
-        <link rel="stylesheet" href="style_sudpas.css">
+        <link rel="stylesheet" href="style_login_sudpas.css">
         <script type="module" src="login.js" defer="defer"></script>
     </head>
     <body>

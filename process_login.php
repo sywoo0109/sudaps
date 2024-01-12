@@ -22,6 +22,7 @@ if ($result === FALSE) {
     $row = mysqli_fetch_array($result);
     if ($row['activated'] === "1") {
         $response = array("success" => true, "message" => "Activated user");
+        session_start();
         $_SESSION['id'] = $idInputValue;
     } else {
         $response = array("success" => false, "message" => "Deactivated user");

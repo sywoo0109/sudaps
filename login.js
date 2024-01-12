@@ -67,42 +67,52 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   loginButtonInput.addEventListener("click", () => {
-    const inputValue = idInput.value;
+    const idInputValue = idInput.value;
+    const idErrorMessageValue = idErrorMessage.innerText.trim();
+    const pwInputValue = pwInput.value;
+    const pwErrorMessageValue = pwErrorMessage.innerText.trim();
 
     if (idStoreCheckbox.checked) {
       const expiryTime = new Date();
       expiryTime.setTime(expiryTime.getTime() + 365 * 24 * 60 * 60 * 1000);
       document.cookie =
         "userData=" +
-        encodeURIComponent(inputValue) +
+        encodeURIComponent(idInputValue) +
         "; expires=" +
         expiryTime.toUTCString() +
         "; path=/";
     }
 
-    fetch("process_login.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: `inputValue=${encodeURIComponent(inputValue)}`,
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("데이터베이스 연결 오류");
-        }
-        return response.json();
+    if (
+      idInputValue !== "" &&
+      pwInputValue !== "" &&
+      idErrorMessageValue === "" &&
+      pwErrorMessageValue === ""
+    ) {
+      fetch("process_login.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `inputValue=${encodeURIComponent(idInputValue)}`,
       })
-      .then((data) => {
-        if (data.success === true) {
-          window.location.href = "sudpas.php";
-        } else {
-          duErrorMessage.innerHTML =
-            "비활성화 처리된 id입니다. 관리자에게 문의해주세요.";
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("데이터베이스 연결 오류");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          if (data.success === true) {
+            window.location.href = "sudpas.php";
+          } else {
+            duErrorMessage.innerHTML =
+              "비활성화 처리된 id입니다. 관리자에게 문의해주세요.";
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
   });
 });
