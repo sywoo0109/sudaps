@@ -3,13 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <title>삼육대학교 기부 플랫폼 관리자 사이트</title>
-        <link rel="stylesheet" href="style_login_sudpas.css">
-        <script type="module" src="login.js" defer="defer"></script>
+        <link rel="stylesheet" href="style_sudpas_login.css">
+        <script type="module" src="sudpas_login.js" defer="defer"></script>
     </head>
     <body>
         <div class="topBar"></div>
         <div class="mainContainer">
-            <img src="./img/logo_black.png"></img>
+            <img src="./img/logo_black.png" class="logo"></img>
             <h1>삼육대학교 기부 플랫폼 관리자 사이트</h1>
             <div class="inputContainer">
                 <p>

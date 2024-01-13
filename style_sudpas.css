@@ -1,3 +1,116 @@
 body {
   margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+}
+
+.topBar {
+  height: 40px;
+  background: linear-gradient(to bottom, #002c77, #00afec);
+}
+
+.mainContainer {
+  margin: 20px 60px;
+  border: 1px solid;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sideBarContainer {
+  width: 300px;
+  height: 100%;
+  border-right: 1px solid;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.sideBarContainer > * {
+  margin: 20px;
+}
+
+.logo {
+  width: 200px;
+  margin: 20px auto;
+}
+
+.adminMenuContainer {
+  margin-bottom: 0;
+  border-bottom: 1px solid;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.adminProfileContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profileImage {
+  width: 40px;
+  height: 40px;
+  border: 1px solid;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profileImage img {
+  width: auto;
+  height: 100%;
+  display: block;
+}
+
+.adminName {
+  margin: 0 20px;
+  flex-grow: 1;
+}
+
+.dropdownButton {
+  cursor: pointer;
+}
+
+.adminDropdownContainer {
+  margin: 0 20px 0 62px;
+}
+
+.adminDropdownContainer > div {
+  margin-top: 10px;
+}
+
+.menuContainer > div {
+  margin-top: 10px;
+}
+
+.menuContainer i {
+  width: 16px;
+  margin-right: 10px;
+}
+
+.contentContainer {
+  height: 100%;
+  flex-grow: 1;
+}
+
+.menuBar {
+  height: 60px;
+  border-bottom: 1px solid;
+  display: flex;
+  align-items: center;
+}
+
+.sideBarHamburger {
+  margin: 0 20px;
+}
+
+.bottomBar {
+  height: 40px;
+  background: linear-gradient(to top, #002c77, #00afec);
 }
