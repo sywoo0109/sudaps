@@ -73,7 +73,7 @@ if (!isset($_SESSION["id"])) {
                     <div id="sideBarButton">
                         <i class="fa-solid fa-bars fa-2xl sideBarHamburger"></i>
                     </div>
-                    <div>관리자 관리</div>
+                    <div>미디어 관리</div>
                 </div>
                 <div></div>
             </div>

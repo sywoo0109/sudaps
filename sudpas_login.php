@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>삼육대학교 기부 플랫폼 관리자 사이트</title>
         <link rel="stylesheet" href="style_sudpas_login.css">
-        <script type="module" src="sudpas_login.js" defer="defer"></script>
+        <script type="module" src="sudpas_login.js" defer></script>
     </head>
     <body>
         <div class="topBar"></div>
