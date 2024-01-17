@@ -78,7 +78,7 @@ if (!isset($_SESSION["id"])) {
                 </div>
                 <div>
                     <div class="adminActionContainer">
-                        <div class="info">관리자로 등록된 사용자 목록입니다.</div>
+                        <div>관리자로 등록된 사용자 목록입니다.</div>
                         <a href="sudpas_admin_group.php">
                             <button>관리자 그룹 만들기</button>
                         </a>
@@ -86,28 +86,11 @@ if (!isset($_SESSION["id"])) {
                             <button>새 관리자 만들기</button>
                         </a>
                     </div>
-                    <div class="userTableContainer">
-                        <table border="1" class="userTable">
-                            <thead>
-                                <tr>
-                                    <th>아이디</th>
-                                    <th>이름 / 그룹명</th>
-                                    <th>상태</th>
-                                    <th>수정</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>admin</td>
-                                    <td>관리자 / master group</td>
-                                    <td>활성화</td>
-                                    <td>
-                                        <button disabled>정보 수정</button>
-                                    </td>
-                                </tr>
-                                <?php require 'lib/userTable.php'; ?>
-                            </tbody>
-                        </table>
+                    <div>
+                        표
+                    </div>
+                    <div>
+                        정보 입력 받는 창
                     </div>
                 </div>
             </div>

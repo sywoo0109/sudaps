@@ -109,6 +109,7 @@ if (!isset($_SESSION["id"])) {
                             </tbody>
                         </table>
                     </div>
+                    <div>사용자 정보 수정</div>
                 </div>
             </div>
         </div>

@@ -19,6 +19,7 @@ a {
 }
 
 .mainContainer {
+  min-width: 1000px;
   margin: 20px 60px;
   border: 1px solid;
   flex-grow: 1;

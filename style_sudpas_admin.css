@@ -1,0 +1,50 @@
+body {
+  overflow-y: hidden;
+}
+
+.adminActionContainer {
+  display: flex;
+  margin: 10px;
+}
+
+.adminActionContainer > * {
+  margin-right: 10px;
+}
+
+.info {
+  margin-right: 20px;
+}
+
+.userTableContainer {
+  max-height: 203px;
+  overflow: auto;
+  position: relative;
+  margin: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table th {
+  position: sticky;
+  top: 0;
+  background-color: #002c77;
+  color: #f5f5f5;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+tr td:nth-child(4) {
+  text-align: center;
+}
+
+.userTable {
+}

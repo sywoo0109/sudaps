@@ -94,7 +94,9 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: `inputValue=${encodeURIComponent(idInputValue)}`,
+        body: `idInputValue=${encodeURIComponent(
+          idInputValue
+        )}&pwInputValue=${encodeURIComponent(pwInputValue)}`,
       })
         .then((response) => {
           if (!response.ok) {
