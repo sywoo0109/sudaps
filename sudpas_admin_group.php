@@ -86,11 +86,42 @@ if (!isset($_SESSION["id"])) {
                             <button>새 관리자 만들기</button>
                         </a>
                     </div>
-                    <div>
-                        표
+                    <div class="userTableContainer">
+                        <table border="1" class="userTable">
+                            <thead>
+                                <tr>
+                                    <th>아이디</th>
+                                    <th>이름 / 그룹명</th>
+                                    <th>상태</th>
+                                    <th>수정</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>admin</td>
+                                    <td>관리자 / master group</td>
+                                    <td>활성화</td>
+                                    <td>
+                                        <button disabled="disabled">정보 수정</button>
+                                    </td>
+                                </tr>
+                                <?php require 'lib/userTable.php'; ?>
+                            </tbody>
+                        </table>
                     </div>
-                    <div>
-                        정보 입력 받는 창
+                    <div class="inputWindowContainer">
+                        <div class="inputWindowContainerName">관리자 그룹 만들기</div>
+                        <div class="inputContainer">
+                            <div class="inputLabel">그룹명</div>
+                            <div class="groupNameInputContainer">
+                                <input type="text" id="groupName"></input>
+                                <div class="groupNameError" id="groupNameError">그룹명은 최대 10자까지 등록 가능합니다.</div>
+                            </div>
+                        </div>
+                        <div class="buttonContainer">
+                            <button id="applyButton">적용</button>
+                            <button id="cancleButton">취소</button>
+                        </div>
                     </div>
                 </div>
             </div>

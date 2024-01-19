@@ -14,12 +14,13 @@ a {
 }
 
 .topBar {
+  width: 100vw;
   height: 40px;
   background: linear-gradient(to bottom, #002c77, #00afec);
 }
 
 .mainContainer {
-  min-width: 1000px;
+  min-width: 1200px;
   margin: 20px 60px;
   border: 1px solid;
   flex-grow: 1;
