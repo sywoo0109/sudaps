@@ -18,7 +18,7 @@ body {
   max-height: 203px;
   overflow: auto;
   position: relative;
-  margin: 40px;
+  margin: 20px 40px;
   display: flex;
   justify-content: center;
 }
@@ -60,32 +60,60 @@ tr td:nth-child(4) {
 
 .inputContainer {
   display: flex;
+  flex-direction: column;
+}
+
+.inputContainer * {
+  margin: 0px;
+}
+
+.inputItem {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.inputItem > input[type="text"],
+.inputItem > input[type="password"] {
+  width: 292px;
+  margin-right: 20px;
+}
+
+.inputItem > input[type="radio"] {
+  margin: 0 10px;
+}
+
+.inputItem > select {
+  height: 21px;
+  width: 300px;
+  margin-right: 20px;
 }
 
 .inputLabel {
+  width: 200px;
+  margin-left: 20px;
   display: flex;
   align-items: center;
 }
 
-.groupNameInputContainer {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.groupNameInputContainer > * {
-  margin: 10px;
-}
-
-.groupNameError {
+.inputError {
+  font-size: 12px;
   color: gray;
+  display: flex;
+  align-items: center;
 }
 
 .buttonContainer {
+  margin-bottom: 0;
   display: flex;
   justify-content: center;
 }
 
-.buttonContainer > button {
+.buttonContainer button {
   width: 100px;
+}
+
+.buttonContainer a {
+  margin: 0px;
 }

@@ -12,7 +12,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// $sql = "INSERT INTO group_name (name) VALUES ('{$inputValue}')";
 $sql = "SELECT * FROM group_name WHERE name = '$inputValue'";
 
 $result = $conn->query($sql);

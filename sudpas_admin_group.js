@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const groupNameInput = document.getElementById("groupName");
   const groupNameError = document.getElementById("groupNameError");
   const applyButtonInput = document.getElementById("applyButton");
-  const cancleButtonInput = document.getElementById("cancleButton");
 
   groupNameInput.addEventListener("input", () => {
     if (groupNameInput.value.length <= 10) {
@@ -16,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const groupNameValue = groupNameInput.value;
 
     if (groupNameInput.value.length > 0 && groupNameInput.value.length <= 10) {
-      fetch("process_groupcreate.php", {
+      fetch("process_group_create.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",

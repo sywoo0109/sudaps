@@ -78,7 +78,7 @@ if (!isset($_SESSION["id"])) {
                 </div>
                 <div>
                     <div class="adminActionContainer">
-                        <div>관리자로 등록된 사용자 목록입니다.</div>
+                        <div class="info">관리자로 등록된 사용자 목록입니다.</div>
                         <a href="sudpas_admin_group.php">
                             <button>관리자 그룹 만들기</button>
                         </a>
@@ -112,21 +112,23 @@ if (!isset($_SESSION["id"])) {
                     <div class="inputWindowContainer">
                         <div class="inputWindowContainerName">관리자 그룹 만들기</div>
                         <div class="inputContainer">
-                            <div class="inputLabel">그룹명</div>
-                            <div class="groupNameInputContainer">
-                                <input type="text" id="groupName"></input>
-                                <div class="groupNameError" id="groupNameError">그룹명은 최대 10자까지 등록 가능합니다.</div>
+                            <div class="inputItem">
+                                <div class="inputLabel">그룹명</div>
+                                <input type="text" id="groupName" class="groupNameInput"></input>
+                                <div class="inputError" id="groupNameError">그룹명은 최대 10자까지 등록 가능합니다.</div>
                             </div>
                         </div>
                         <div class="buttonContainer">
                             <button id="applyButton">적용</button>
-                            <button id="cancleButton">취소</button>
+                            <a href="sudpas_admin.php">
+                                <button id="cancleButton">취소</button>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="bottomBar"></div>
-        <script type="module" src="sudpas_admin.js" defer="defer"></script>
+        <script type="module" src="sudpas_admin_group.js" defer="defer"></script>
     </body>
 </html>

@@ -113,6 +113,5 @@ if (!isset($_SESSION["id"])) {
             </div>
         </div>
         <div class="bottomBar"></div>
-        <script type="module" src="sudpas_admin.js" defer="defer"></script>
     </body>
 </html>
