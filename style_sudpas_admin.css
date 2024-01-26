@@ -97,6 +97,10 @@ tr td:nth-child(4) {
   align-items: center;
 }
 
+.idReadonly {
+  color: gray;
+}
+
 .inputError {
   font-size: 12px;
   color: gray;
