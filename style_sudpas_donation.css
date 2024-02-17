@@ -1,0 +1,76 @@
+.totalDonationContainer {
+  font-weight: 700;
+  margin: 20px;
+}
+
+.monthlyContainer {
+  height: 300px;
+  margin: 20px;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+}
+
+.monthlyMenuContainer,
+.methodMenuContainer,
+.donorMenuContainer {
+  font-weight: 700;
+  margin: 10px;
+  display: flex;
+}
+
+.year {
+  margin-left: 10px;
+  border-radius: 10px;
+}
+
+.chartContainer {
+  width: 1460px;
+  height: 280px;
+}
+
+.monthylChart {
+  margin: 0 20px;
+}
+
+.methodDonorContainer {
+  max-height: 340px;
+  display: flex;
+}
+
+.methodMenuContainer {
+  height: 21px;
+  margin-right: 10px;
+}
+
+.methodContainer {
+  width: 719px;
+  margin: 20px 10px 20px 20px;
+  border: 1px solid;
+  display: flex;
+}
+
+.methodChartContainer {
+  height: 260px;
+  display: flex;
+  justify-content: center;
+}
+
+.methodChart {
+  margin-left: 20px;
+}
+
+.donorContainer {
+  flex-grow: 1;
+  margin: 20px 20px 20px 10px;
+  border: 1px solid;
+}
+
+.donorTable {
+  width: 681px;
+  margin: 20px;
+}
+
+td {
+  padding-left: 11%;
+}
