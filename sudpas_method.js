@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const popupInst = document.getElementById("popupInst");
   const confirmButton = document.getElementById("confirm");
   const cancleButton = document.getElementById("cancle");
-  let method;
+  let DBid;
 
   kakao.addEventListener("click", () => {
     if (kakao.className === "activated") {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       popupInst.innerHTML = "'카카오페이'를 활성화<br/>하시겠습니까?";
     }
     popup.style.display = "block";
-    method = 1;
+    DBid = 1;
   });
 
   naver.addEventListener("click", () => {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       popupInst.innerHTML = "'네이버페이'를 활성화<br/>하시겠습니까?";
     }
     popup.style.display = "block";
-    method = 2;
+    DBid = 2;
   });
 
   apple.addEventListener("click", () => {
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       popupInst.innerHTML = "'애플페이'를 활성화<br/>하시겠습니까?";
     }
     popup.style.display = "block";
-    method = 3;
+    DBid = 3;
   });
 
   samsung.addEventListener("click", () => {
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
       popupInst.innerHTML = "'삼성페이'를 활성화<br/>하시겠습니까?";
     }
     popup.style.display = "block";
-    method = 4;
+    DBid = 4;
   });
 
   card.addEventListener("click", () => {
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       popupInst.innerHTML = "'신용/체크카드'를 활성화<br/>하시겠습니까?";
     }
     popup.style.display = "block";
-    method = 5;
+    DBid = 5;
   });
 
   phone.addEventListener("click", () => {
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
       popupInst.innerHTML = "'휴대폰'를 활성화<br/>하시겠습니까?";
     }
     popup.style.display = "block";
-    method = 6;
+    DBid = 6;
   });
 
   confirmButton.addEventListener("click", () => {
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: `methodInputValue=${encodeURIComponent(method)}`,
+      body: `methodInputValue=${encodeURIComponent(DBid)}`,
     })
       .then((response) => {
         if (!response.ok) {
